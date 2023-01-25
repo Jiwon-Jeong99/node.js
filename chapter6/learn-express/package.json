@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/Jiwon-Jeong99/node.js.git"
   },
-  "author": "Jiwon",
+  "author": "jiwon jeong",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jiwon-Jeong99/node.js/issues"
@@ -20,5 +20,8 @@
   "homepage": "https://github.com/Jiwon-Jeong99/node.js#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
