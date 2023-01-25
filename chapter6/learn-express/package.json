@@ -1,0 +1,24 @@
+{
+  "name": "learn-express",
+  "version": "1.0.0",
+  "description": "express배우기",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app",
+    "start:dev": "nodemon --watch src/ src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiwon-Jeong99/node.js.git"
+  },
+  "author": "Jiwon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jiwon-Jeong99/node.js/issues"
+  },
+  "homepage": "https://github.com/Jiwon-Jeong99/node.js#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
