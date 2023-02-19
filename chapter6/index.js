@@ -10,7 +10,7 @@ dotenv.config();
 var app = express(); //app에 express 할당
 app.set("port", process.env.PORT || 3000); //process.env 객체에 PORT 속성이 있으면 그 값, 없으면 3000번
 //패키지들 안에 이미 req,res,next 내재되어 있음
-app.use(morgan("dev"));
+app.use(morgan("combined"));
 app.use("/", express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
