@@ -24,8 +24,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(
   session({
-    resave: false,
-    saveUninitialized: false,
+    resave: false, //수정사항이 없더라도 세션을 다시 저장할지
+    saveUninitialized: false, //세션에 저장할 내역이 없더라도 처음부터 세션을 생성할지
     secret: process.env.COOKIE_SECRET,
     cookie: {
       httpOnly: true,
