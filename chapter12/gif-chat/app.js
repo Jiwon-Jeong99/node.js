@@ -7,8 +7,9 @@ import session from "express-session";
 import nunjucks from "nunjucks";
 import dotenv from "dotenv";
 
-//routes
+//modules
 import indexRouter from "./routes";
+import webSocket from "./socket";
 
 dotenv.config();
 
@@ -55,3 +56,10 @@ app.use((err, req, res, next) => {
 app.listen(app.get("port"), () => {
   console.log(app.get("port"), "번 포트에서 대기 중");
 });
+
+//웹 소켓에 서버 연결
+const server = app.listen(app.get("port"), () => {
+  console.log(app.get("port"), "번 포트에서 대기 중");
+});
+
+webSocket(server);
