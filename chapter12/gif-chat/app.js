@@ -1,19 +1,23 @@
 //packages
 import express from "express";
 import path from "path";
-import morga from "morgan";
+import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import nunjucks from "nunjucks";
 import dotenv from "dotenv";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 //modules
-import indexRouter from "./routes";
-import webSocket from "./socket";
+import indexRouter from "./routes/index.js";
+import { webSocket } from "./socket.js"; //export만 하면 구조분해할당 해줘야함. 선택해서 내보낼 수 있으니 선택해서 불러와야 함.
 
 dotenv.config();
+const app = express();
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
-app.set("port", process.env.PORT || 8005);
+app.set("port", process.env.PORT || 8010);
 app.set("view engine", "html");
 
 nunjucks.configure("views", {
@@ -51,10 +55,6 @@ app.use((err, req, res, next) => {
   res.locals.error = process.env.NODE_ENV !== "production" ? err : {};
   res.statue(err.status || 500);
   res.render("error");
-});
-
-app.listen(app.get("port"), () => {
-  console.log(app.get("port"), "번 포트에서 대기 중");
 });
 
 //웹 소켓에 서버 연결

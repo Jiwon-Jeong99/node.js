@@ -1,7 +1,7 @@
-import WebSocket from "ws";
+import { WebSocketServer } from "ws";
 
-export const websocket = (server) => {
-  const wss = new WebSocket.Server({ server });
+export const webSocket = (server) => {
+  const wss = new WebSocketServer({ server });
 
   wss.on("connection", (ws, req) => {
     //웹 소켓 연결 시
